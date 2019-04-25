@@ -21,10 +21,19 @@
 // These are normal people. If they are 7th in line, tell them that.
 // Don't get their hopes up by telling them they are number 6 in line.
 
+
+
+
+//building it like an anonymous function
+// The function, takeANumber, should accept the current line of people, katzDeliLine, and new person's name as parameters
+
 var takeANumber = function(katzDeli, newCustomer) {
 
+        //for the line to be a line, its length should be greater than 0
         if (katzDeli.length > 0);
+        //if condition holds true then push the new customer's name onto the array katzDeli
         katzDeli.push(newCustomer);
+        //the new customer's position in the line will be the length of the katzDeli array therefore:
         return ('Welcome, ' + newCustomer + '. You are number ' + katzDeli.length + ' in line.')
    }
 
@@ -42,13 +51,18 @@ var takeANumber = function(katzDeli, newCustomer) {
 // If there is nobody in line, it should return "There is nobody waiting to be served!"
 
 
-
-function nowServing (katzDeliLine) { //declared function
-    if(katzDeliLine.length===0) { //checks if length of array(katzDeli) is = to 0
-    return 'There is nobody waiting to be served!'; //returns string no one is waiting
+//Build a function nowServing. It accepts the line in the Deli as a parameter.
+function nowServing (katzDeliLine) {
+    if(katzDeliLine.length===0) { //if length of line is equal to 0, we will use comparison operator with ===
+    return 'There is nobody waiting to be served!'; //returns the given string
   }
-  var customer = katzDeliLine.shift(); // shift array of people
-  return "Currently serving " + customer + "."; //return string with customer name
+
+  // This function should return the first person in line and then remove that individual from the line.
+  // array.shift() removes first element from the array
+  var customer = katzDeliLine.shift();
+
+  //return sentence with customer being currently served
+  return "Currently serving " + customer + ".";
   }
 
 
@@ -77,14 +91,24 @@ function nowServing (katzDeliLine) { //declared function
 //        "The line is currently: 1. Ada, 2. Grace".
 //If there is nobody in line, it should return "The line is currently empty."
 
+
+
+//declare function currentLine as an anonymous function
+//this function has line in the deli as the only parameter
 var currentLine = function (katzDeliLine) {
+  //If there is nobody in line, it should return "The line is currently empty."
   if (katzDeliLine.length===0) {
     return "The line is currently empty.";
 }
+    //create an empty array with the final results carrying customers and their numbers
     var customerAndNumber = [];
+    //loop through the line in the deli
     for (var i=0; i<katzDeliLine.length; i++) {
+    //add people falling into the line into the empty array we just created.
+    //We will add 1 to it cause the first element in an array is 0
     customerAndNumber.push(i + 1 + ". " + katzDeliLine[i])
   }
+  //array.join(",") creates new string by joining all elements in array separated by specified seperator
   return "The line is currently: " + customerAndNumber.join(", ");
  }
 
@@ -93,6 +117,21 @@ var currentLine = function (katzDeliLine) {
 // 3. loop through our array = our current deli line / katzDeliLine
 // 4. Push the customer and taking the index / their current position in line -
 // 5. Return string - by joining all the elements of the array using .join method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
